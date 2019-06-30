@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=auto, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--===============================================================================================-->
-    <title>Single Promise HTML</title>
+    <title>Movie Cast Finder</title>
     <!--===============================================================================================-->
-    <link rel="icon" href="https://cdn.thinglink.me/api/image/703075220914700288/1240/10/scaletowidth">
+    <link rel="icon" href="images\favicon.png">
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="framework\bootstrap\bootstrap.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="css/main.css">
     <!--===============================================================================================-->
@@ -19,63 +19,88 @@
 
 <body>
     <div class="content">
-        <div class="header">
-            <h1>Movie Cast Finder</h1>
-        </div>
-        <div class="movieSearch">
-            <form id="movieForm">
-                <div class="container">
-                    <div class="d-flex justify-content-center">
-                        <div class="p-1 w-50">
-                            <input type="text" id="movie-title" class="form-control" placeholder="Movie Title">
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <div class="p-1">
-                            <button type=" submit" class="btn btn-primary">Find 'em ni🅱️🅱️as!</button>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <div id="movies">
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
 
-        <div class="moviesCarousel">
-            <div id="moviesCarouselIndicator" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#moviesCarouselIndicator" data-slide-to="0" class="active"></li>
-                    <li data-target="#moviesCarouselIndicator" data-slide-to="1"></li>
-                    <li data-target="#moviesCarouselIndicator" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/61wIgntBaOL._SY606_.jpg" alt="poster">
-                            <h2>Title</h2>
-                                <hr>
-                                <p>Some info</p>
-                    </div>
-                    <div class="carousel-item">
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/61wIgntBaOL._SY606_.jpg" alt="poster">
-                    </div>
-                    <div class="carousel-item">
-                            <img src="https://images-na.ssl-images-amazon.com/images/I/61wIgntBaOL._SY606_.jpg" alt="poster">
-                    </div>
+        <div class="row page-header">
+            <div class="col-md-12">
+                <div class="header">
+                    <h1>Movie Cast Finder</h1>
                 </div>
-                <a class="carousel-control-prev" href="#moviesCarouselIndicator" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#moviesCarouselIndicator" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
 
-        <div class="cast">
+        <div class="row movie-search">
+            <div class="col-md-12">
+
+                <form id="movieForm">
+                    <div class="container">
+                        <div class="d-flex justify-content-center">
+                            <div class="p-1 w-50">
+                                <input type="text" id="movie-title" class="form-control" placeholder="Movie Title">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="p-1">
+                                <button type=" submit" class="btn btn-primary">Find 'em ni🅱️🅱️as!</button>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div id="movies">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row movies-carousel mb-5">
+            <div class="col-md-12">
+                <div id="moviesCarousel" class="carousel slide justify-content-center" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#moviesCarousel" data-slide-to="0" class=""></li>
+                        <li data-target="#moviesCarousel" data-slide-to="1" class="active"></li>
+                        <li data-target="#moviesCarousel" data-slide-to="2" class=""></li>
+                    </ol>
+                    <div class="carousel-header p-3">
+                            <h3 style="font-style: italic">Which one do you mean tho?</h3>
+                        </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item">
+                            <img src="https://m.media-amazon.com/images/M/MV5BNGYxYzI5ODQtY2JmYy00ZjFjLTg5MjgtMjI3Njg5ODEwNmM1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_CR0,0,708,1000_AL_.jpg" class="d-block" alt="something">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Redline (2009)</h5>
+                                <p>A story about the most popular racing event in the galaxy, the Redline, and the various racers who compete in it.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item active">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMTk4NTk4MTk1OF5BMl5BanBnXkFtZTcwNTE2MDIwNA@@._V1_.jpg" class="d-block" alt="something">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Tron (2010)</h5>
+                                <p>The son of a virtual world designer goes looking for his father and ends up inside the digital world that his father designed. He meets his father's corrupted creation and a unique ally who was born inside the digital world.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                                <img src="https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg" class="d-block" alt="something">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>American Psycho (2000)</h5>
+                                    <p>A wealthy New York City investment banking executive, Patrick Bateman, hides his alternate psychopathic ego from his co-workers and friends as he delves deeper into his violent, hedonistic fantasies.
+                                        </p>
+                                </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#moviesCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#moviesCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container cast">
+
             <div class="wrap-table100">
                 <div class="table staff-table">
 
@@ -216,12 +241,13 @@
 
                 </div>
             </div>
+
         </div>
+
     </div>
 
-    <script src="js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js\main.js"></script>
+    <script src="framework\bootstrap-native\bootstrap-native-v4.min.js"></script>
 </body>
 
 </html>

@@ -1,17 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Sniglet&display=swap');
 
 .content {
-    overflow: auto;
-    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
     height: 100%;
     width: 100%;
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 
-    .moviesCarousel {
-        .carousel-item {
-            padding: 0% 30%
-        }
+    .movies-carousel {
+        background-color: #00000020;
 
         hr {
             background-image: -webkit-linear-gradient(left, rgba(66, 133, 244, 0.8), rgba(66, 133, 244, 0.6), rgba(0, 0, 0, 0));
@@ -20,18 +19,40 @@
             margin-bottom: 20px;
             width: 100%;
         }
+
+        svg {
+            min-height: 70vh;
+            opacity: 0.3;
+        }
+
+        img {
+            max-height: 50vh;
+            margin: 0 auto;
+            margin-bottom: 8%;
+        }
+
+        .carousel-header {
+            right: 15%;
+            bottom: 65vh;
+            left: 15%;
+            z-index: 10;
+            color: #fff;
+            text-align: center;
+        }
+
     }
 
     .header {
         display: flex;
         padding-top: 1%;
+
         h1 {
             margin: 0 auto;
             font-family: 'Pacifico', cursive;
         }
     }
 
-    .movieSearch {
+    .movie-search {
         padding: 2%;
 
         #movies {

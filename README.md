@@ -1,9 +1,9 @@
 # Movie Cast Finder
-> Helps you find people from movies you like.
+> Lightweight vanillaJS and Bootstrap movie cast search engine
 
 This application is intended mainly as a modern JS workout. Made with ECMA8+ using tools such as promises, async await, classes etc.
 
-![](images\readme_header.png)
+![](images\readme_header2.png)
 
 ## Usage example
 
@@ -13,7 +13,8 @@ The idea behind this app is basically to be a search engine for movie casts, don
 
 ## Built With
 
-* [Materialize](https://materializecss.com/) - The CSS framework used
+* [Bootstrap](https://getbootstrap.com/) - The CSS framework used
+* [Bootstrap Native](https://github.com/thednp/bootstrap.native) - Native JS code for Bootstrap
 * [SASS](https://sass-lang.com/) - CSS supercharger
 * Vanilla JS / ES8+
 
@@ -21,7 +22,13 @@ The idea behind this app is basically to be a search engine for movie casts, don
 
 * 0.1.0
     * Intial Draft.
-    * Intial layout and structure almost there. Colors and theme kinda figured out already.
+    * Intial layout and structure almost there.
+    * Colors and theme kinda figured out already.
+
+* 0.2.0
+    * Carousel Draft.
+    * Initial carousel layout done.
+    * Migrating back from Materialize to Bootstrap v4 CSS + Bootstrap Native JS
 
 ## Help resources used
 
@@ -30,6 +37,7 @@ The idea behind this app is basically to be a search engine for movie casts, don
 
 #### Stackoverflow
 [Fetch with classes](https://stackoverflow.com/a/39395072/10088643)
+
 [Is it a bad practice to have a constructor return a promise?](https://stackoverflow.com/questions/24398699/is-it-bad-practice-to-have-a-constructor-function-return-a-promise)
 
 
