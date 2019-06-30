@@ -30,6 +30,7 @@ The idea behind this app is basically to be a search engine for movie casts, don
 
 #### Stackoverflow
 [Fetch with classes](https://stackoverflow.com/a/39395072/10088643)
+
 [Is it a bad practice to have a constructor return a promise?](https://stackoverflow.com/questions/24398699/is-it-bad-practice-to-have-a-constructor-function-return-a-promise)
 
 
