@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--===============================================================================================-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=auto, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--===============================================================================================-->
+    <title>Single Promise HTML</title>
+    <!--===============================================================================================-->
+    <link rel="icon" href="https://cdn.thinglink.me/api/image/703075220914700288/1240/10/scaletowidth">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="css/main.css">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">
+            <h1>Movie Cast Finder</h1>
+        </div>
+        <div class="movie">
+            <form id="movieForm">
+                <div class="container">
+                    <div class="d-flex justify-content-center">
+                        <div class="p-1 w-50">
+                            <input type="text" id="movie-title" class="form-control" placeholder="Movie Title">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="p-1">
+                            <button type=" submit" class="btn btn-primary">Find 'em bitches!</button>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div id="movies">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="cast">
+            <div class="wrap-table100">
+                <div class="table staff-table">
+
+                    <div class="row header">
+                        <div class="cell">
+                            Full Name
+                        </div>
+                        <div class="cell">
+                            Age
+                        </div>
+                        <div class="cell">
+                            Job Title
+                        </div>
+                        <div class="cell">
+                            Location
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Full Name">
+                            Vincent Williamson
+                        </div>
+                        <div class="cell" data-title="Age">
+                            31
+                        </div>
+                        <div class="cell" data-title="Job Title">
+                            iOS Developer
+                        </div>
+                        <div class="cell" data-title="Location">
+                            Washington
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Full Name">
+                            Joseph Smith
+                        </div>
+                        <div class="cell" data-title="Age">
+                            27
+                        </div>
+                        <div class="cell" data-title="Job Title">
+                            Project Manager
+                        </div>
+                        <div class="cell" data-title="Location">
+                            Somerville, MA
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Full Name">
+                            Justin Black
+                        </div>
+                        <div class="cell" data-title="Age">
+                            26
+                        </div>
+                        <div class="cell" data-title="Job Title">
+                            Front-End Developer
+                        </div>
+                        <div class="cell" data-title="Location">
+                            Los Angeles
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Full Name">
+                            Sean Guzman
+                        </div>
+                        <div class="cell" data-title="Age">
+                            25
+                        </div>
+                        <div class="cell" data-title="Job Title">
+                            Web Designer
+                        </div>
+                        <div class="cell" data-title="Location">
+                            San Francisco
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Full Name">
+                            Keith Carter
+                        </div>
+                        <div class="cell" data-title="Age">
+                            20
+                        </div>
+                        <div class="cell" data-title="Job Title">
+                            Graphic Designer
+                        </div>
+                        <div class="cell" data-title="Location">
+                            New York, NY
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Full Name">
+                            Austin Medina
+                        </div>
+                        <div class="cell" data-title="Age">
+                            32
+                        </div>
+                        <div class="cell" data-title="Job Title">
+                            Photographer
+                        </div>
+                        <div class="cell" data-title="Location">
+                            New York
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Full Name">
+                            Vincent Williamson
+                        </div>
+                        <div class="cell" data-title="Age">
+                            31
+                        </div>
+                        <div class="cell" data-title="Job Title">
+                            iOS Developer
+                        </div>
+                        <div class="cell" data-title="Location">
+                            Washington
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="cell" data-title="Full Name">
+                            Joseph Smith
+                        </div>
+                        <div class="cell" data-title="Age">
+                            27
+                        </div>
+                        <div class="cell" data-title="Job Title">
+                            Project Manager
+                        </div>
+                        <div class="cell" data-title="Location">
+                            Somerville, MA
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
