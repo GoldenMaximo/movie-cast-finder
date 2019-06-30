@@ -1,52 +1,40 @@
-const apiKey = 'e5eee0efae5b0226ec8670bdf1fd1380';
-const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=`;
-const imgUrl = 'http://image.tmdb.org/t/p/w300/';
-const peopleUrl = 'https://api.themoviedb.org/3/person/';
-const castUrl = 'https://api.themoviedb.org/3/movie';
+class Connection {
+    constructor() {
+        this.apiKey = 'e5eee0efae5b0226ec8670bdf1fd1380';
+        this.movieSearchUrl = 'https://api.themoviedb.org/3/search/movie';
+        this.imgUrl = 'http://image.tmdb.org/t/p/w300/';
+        this.peopleUrl = 'https://api.themoviedb.org/3/person/';
+        this.castUrl = 'https://api.themoviedb.org/3/movie';
+    }
 
-const fetchMovieData = (movieTitle => new Promise((resolve, reject) => {
-    fetch(apiUrl + movieTitle).then(response => response.json()).then((data) => {
-        resolve(data.results);
-    }).catch((error) => {
-        reject(error);
-    });
-}));
+    async getMovie(movieTitle) {
+        return fetch(`${this.movieSearchUrl}?api_key=${this.apiKey}&query=${movieTitle}`)
+            .then(response => response.json())
+            .then(movies => movies.results[0]);
+    }
 
-const getCast = (movie => new Promise((resolve, reject) => {
-    fetch(peopleUrl + movie.id).then(response => response.json()).then((data) => {
-        resolve(data);
-    }).catch((error) => {
-        // console.log(`failed to fetch em bitches ${error}`);
-        reject(error);
-    });
-}));
+    async getCast(movieId) {
+        return fetch(`${this.castUrl}/${movieId}/credits?api_key=${this.apiKey}`)
+            .then(response => response.json())
+            .then(credits => credits.cast);
+    }
+}
 
-const doStuff = () => {
+const getMovieCast = () => {
     const movieTitle = document.querySelector('#movie-title').value;
-    fetchMovieData(movieTitle).then((movieData) => {
-        getCast(movieData[0]).then((cast) => {
-            console.log(cast);
+    new Connection().getMovie(movieTitle).then((movie) => {
+        new Connection().getCast(movie.id).then(() => {
+            // console.log(cast);
         });
     });
 };
 
-document.querySelector('#movieForm').addEventListener('submit', (event) => {
-    event.preventDefault();
-    doStuff();
-});
-
-//
-//
-//
-//
-// Bitch ass code
-// document.querySelector('#movieForm').addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     const movieTitleInputs = Array.from(document.querySelectorAll('.movie-title'));
-//     const moviePromises = movieTitleInputs.map(movieTitleInput => fetchMovieData(movieTitleInput.value));
-//     Promise.all(moviePromises).then((promiseData) => {
-//         promiseData.forEach((element) => {
-//             document.querySelector('#movies').innerHTML += `<img src="${imgUrl}${element[0].poster_path}">`;
-//         });
-//     });
-// });
+document.onreadystatechange = () => {
+    if (document.readyState === 'interactive') {
+        // DOM Listeners
+        document.querySelector('#movieForm').addEventListener('submit', (event) => {
+            event.preventDefault(); // prevents submit
+            getMovieCast(event.target[0].value); // movieTitle input value
+        });
+    }
+};
