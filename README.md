@@ -15,7 +15,7 @@ The idea behind this app is basically to be a search engine for movie casts, don
 
 * [Materialize](https://materializecss.com/) - The CSS framework used
 * [SASS](https://sass-lang.com/) - CSS supercharger
-* [ES8+](https://www.ecma-international.org/ecma-262/8.0/) - Vanilla JS / ES8+
+* Vanilla JS / ES8+
 
 ## Release History
 
