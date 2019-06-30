@@ -3,7 +3,7 @@
 
 This application is intended mainly as a modern JS workout. Made with ECMA8+ using tools such as promises, async await, classes etc.
 
-![](images\readme_header2.png)
+![](images/readme_header2.png)
 
 ## Usage example
 
