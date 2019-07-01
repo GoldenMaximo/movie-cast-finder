@@ -83,7 +83,9 @@ document.onreadystatechange = () => {
             event.preventDefault(); // prevents submit
             // getMovieCast(event.target[0].value); // movieTitle input value
             getMovies();
-            new Carousel(document.querySelector('#moviesCarousel'), {}); // eslint-disable-line no-new, no-undef
+            new Carousel(document.querySelector('#moviesCarousel'), { // eslint-disable-line no-new, no-undef
+                interval: 0,
+            });
         });
     }
 };

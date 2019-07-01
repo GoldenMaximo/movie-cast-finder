@@ -3,11 +3,13 @@
 
 This application is intended mainly as a modern JS workout. Made with ECMA8+ using tools such as promises, async await, classes etc.
 
-![](images/readme_header2.png)
+<!-- ![](images/readme_header2.png) -->
 
 ## Usage example
 
 The idea behind this app is basically to be a search engine for movie casts, done by inputting the movie name on the movie name input and being returned a list of movies which match with that name, upon choosing from one of the movies (displayed in a carousel) a list of cast members will be shown inside a table alongside their pictures, you're able to find out more information about specific cast members by clicking on an actor from the list.
+
+<!-- !!!! Reminder to include their social medias on their info as well !!!! -->
 
 <!-- _For more examples and usage, please refer to the [Wiki][wiki]._ - soon -->
 
@@ -25,11 +27,14 @@ The idea behind this app is basically to be a search engine for movie casts, don
     * Carousel Draft.
     * Initial carousel layout done.
     * Migrating back from Materialize to Bootstrap v4 CSS + Bootstrap Native JS
+    ![](images/readme_header2.png)
 
 * 0.1.0
     * Intial Draft.
+    * Table Draft.
     * Intial layout and structure almost there.
     * Colors and theme kinda figured out already.
+    ![](images/readme_header.png)
 
 ## Help resources used
 
