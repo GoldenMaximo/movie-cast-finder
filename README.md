@@ -1,5 +1,5 @@
 # Movie Cast Finder
-> Lightweight vanillaJS and Bootstrap movie cast search engine
+> Lightweight VanillaJS and Bootstrap movie cast search engine
 
 This application is intended mainly as a modern JS workout. Made with ECMA8+ using tools such as promises, async await, classes etc.
 
@@ -21,15 +21,15 @@ The idea behind this app is basically to be a search engine for movie casts, don
 
 ## Release History
 
-* 0.1.0
-    * Intial Draft.
-    * Intial layout and structure almost there.
-    * Colors and theme kinda figured out already.
-
 * 0.2.0
     * Carousel Draft.
     * Initial carousel layout done.
     * Migrating back from Materialize to Bootstrap v4 CSS + Bootstrap Native JS
+
+* 0.1.0
+    * Intial Draft.
+    * Intial layout and structure almost there.
+    * Colors and theme kinda figured out already.
 
 ## Help resources used
 

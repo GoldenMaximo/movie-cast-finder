@@ -37,18 +37,19 @@ const addCarouselItem = async (movie, index) => {
     const indicatorTemplate = await new Connection().getHTMLTemplate('carousel-indicator-template');
     const templateInitializer = document.createElement('html');
 
+    // Initilizes itemTemplate
     templateInitializer.innerHTML = itemTemplate;
     templateInitializer.querySelector('.carousel-item img').src += movie.poster_path;
     templateInitializer.querySelector('.carousel-item h5').innerText = movie.title;
     templateInitializer.querySelector('.carousel-item p').innerText = movie.overview;
-
     const carouselItem = templateInitializer.querySelector('.carousel-item');
 
+    // Initilizes indicatorTemplate
     templateInitializer.innerHTML = indicatorTemplate;
     templateInitializer.querySelector('li').dataset.slideTo = index;
-
     const carouselIndicator = templateInitializer.querySelector('li');
 
+    // Appends HTML
     carousel.querySelector('.carousel-inner').append(carouselItem);
     carousel.querySelector('.carousel-indicators').append(carouselIndicator);
 };
