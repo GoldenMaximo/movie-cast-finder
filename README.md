@@ -16,6 +16,7 @@ The idea behind this app is basically to be a search engine for movie casts, don
 * [Bootstrap](https://getbootstrap.com/) - The CSS framework used
 * [Bootstrap Native](https://github.com/thednp/bootstrap.native) - Native JS code for Bootstrap
 * [SASS](https://sass-lang.com/) - CSS supercharger
+* [Colorlib](https://colorlib.com/wp/template/responsive-table-v2/) Responsive table v2 by Colorlib
 * Vanilla JS / ES8+
 
 ## Release History

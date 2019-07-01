@@ -41,6 +41,10 @@
   text-align: center;
 }
 
+.content .movies-carousel .carousel-header h3 {
+  font-style: italic;
+}
+
 .content .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -62,9 +66,7 @@
 }
 
 .content .cast {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
 }
 
 .content .cast .wrap-table100 {

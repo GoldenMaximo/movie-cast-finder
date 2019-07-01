@@ -38,6 +38,10 @@
             z-index: 10;
             color: #fff;
             text-align: center;
+
+            h3 {
+                font-style: italic
+            }
         }
 
     }
@@ -63,7 +67,7 @@
     }
 
     .cast {
-        display: flex;
+        display: none;
 
         .wrap-table100 {
             margin: 0 auto;
