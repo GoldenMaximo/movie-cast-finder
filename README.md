@@ -1,7 +1,7 @@
 # Movie Cast Finder
 > Lightweight VanillaJS and Bootstrap movie cast search engine
 
-This application is intended mainly as a modern JS workout. Made with ECMA8+ using tools such as promises, async await, classes etc.
+This is a personal application intended mainly as a modern JS workout. No tutorials were used. Made with ECMA8+ using tools such as promises, async await, classes etc.
 
 <!-- ![](images/readme_header2.png) -->
 
@@ -10,6 +10,7 @@ This application is intended mainly as a modern JS workout. Made with ECMA8+ usi
 The idea behind this app is basically to be a search engine for movie casts, done by inputting the movie name on the movie name input and being returned a list of movies which match with that name, upon choosing from one of the movies (displayed in a carousel) a list of cast members will be shown inside a table alongside their pictures, you're able to find out more information about specific cast members by clicking on an actor from the list.
 
 <!-- !!!! Reminder to include their social medias on their info as well !!!! -->
+<!-- !!!! Reminder on table hover to open the line up and render the actor's photo !!!!  -->
 
 <!-- _For more examples and usage, please refer to the [Wiki][wiki]._ - soon -->
 
