@@ -32,9 +32,12 @@ class Connection {
 }
 
 const addCarouselItem = async (movie, index) => {
-    const carousel = document.querySelector('#moviesCarousel');
+    // Gets templates
     const itemTemplate = await new Connection().getHTMLTemplate('carousel-item-template');
     const indicatorTemplate = await new Connection().getHTMLTemplate('carousel-indicator-template');
+
+    // Gets carousel element + creates tempalate initializer
+    const carousel = document.querySelector('#moviesCarousel');
     const templateInitializer = document.createElement('html');
 
     // Initilizes itemTemplate
@@ -54,9 +57,12 @@ const addCarouselItem = async (movie, index) => {
     carousel.querySelector('.carousel-indicators').append(carouselIndicator);
 };
 
-const addMoviesToCarousel = (movies) => {
-    movies.forEach((movie, index) => {
-        addCarouselItem(movie, index);
+const addMoviesToCarousel = async (movies) => {
+    // map works here but forEach doesn't because map returns an iterable of promises, while forEach returns nought
+    await Promise.all(movies.map(addCarouselItem)).then(() => {
+        new Carousel(document.querySelector('#moviesCarousel'), { // eslint-disable-line no-new, no-undef
+            interval: 0,
+        });
     });
 };
 
@@ -69,23 +75,21 @@ const addMoviesToCarousel = (movies) => {
 //     });
 // };
 
-const getMovies = () => {
+const loadCarousel = () => {
     const movieTitle = document.querySelector('#movie-title-input').value;
     new Connection().getMovies(movieTitle).then((movies) => {
         addMoviesToCarousel(movies);
     });
 };
 
+
+// DOM Listeners
 document.onreadystatechange = () => {
     if (document.readyState === 'interactive') {
-        // DOM Listeners
         document.querySelector('#movieForm').addEventListener('submit', (event) => {
-            event.preventDefault(); // prevents submit
+            event.preventDefault(); // Prevents submit
             // getMovieCast(event.target[0].value); // movieTitle input value
-            getMovies();
-            new Carousel(document.querySelector('#moviesCarousel'), { // eslint-disable-line no-new, no-undef
-                interval: 0,
-            });
+            loadCarousel();
         });
     }
 };

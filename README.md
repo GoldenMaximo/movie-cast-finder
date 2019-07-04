@@ -47,6 +47,9 @@ The idea behind this app is basically to be a search engine for movie casts, don
 
 [Is it a bad practice to have a constructor return a promise?](https://stackoverflow.com/questions/24398699/is-it-bad-practice-to-have-a-constructor-function-return-a-promise)
 
+[How to do async await on a forEach function](https://stackoverflow.com/questions/50328143/how-to-do-async-await-on-a-foreach-function)
+
+[Using async/await with a forEach loop](https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)
 
 ## Meta
 
