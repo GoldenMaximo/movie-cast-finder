@@ -42,7 +42,7 @@ The idea behind this app is basically to be a search engine for movie casts, don
 #### How to use the APIs
 [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)
 
-#### Stackoverflow
+#### Stackoverflow (for future reference)
 [Fetch with classes](https://stackoverflow.com/a/39395072/10088643)
 
 [Is it a bad practice to have a constructor return a promise?](https://stackoverflow.com/questions/24398699/is-it-bad-practice-to-have-a-constructor-function-return-a-promise)
