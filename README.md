@@ -19,7 +19,7 @@ The idea behind this app is basically to be a search engine for movie casts, don
 * [Bootstrap](https://getbootstrap.com/) - The CSS framework used
 * [Bootstrap Native](https://github.com/thednp/bootstrap.native) - Native JS code for Bootstrap
 * [SASS](https://sass-lang.com/) - CSS supercharger
-* [Colorlib](https://colorlib.com/wp/template/responsive-table-v2/) Responsive table v2 by Colorlib
+* [Colorlib](https://colorlib.com/wp/template/responsive-table-v2/) Responsive table v2
 * Vanilla JS / ES8+
 
 ## Release History
@@ -50,6 +50,8 @@ The idea behind this app is basically to be a search engine for movie casts, don
 [How to do async await on a forEach function](https://stackoverflow.com/questions/50328143/how-to-do-async-await-on-a-foreach-function)
 
 [Using async/await with a forEach loop](https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)
+
+[CSS transition auto height not working](https://stackoverflow.com/a/17260384/10088643)
 
 ## Meta
 
