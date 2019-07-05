@@ -75,10 +75,16 @@ const addMoviesToCarousel = async (movies) => {
 //     });
 // };
 
+const showCarousel = () => {
+    document.querySelector('.movies-carousel').classList.add('mb-5');
+    document.querySelector('.movies-carousel').classList.add('open');
+};
+
 const loadCarousel = () => {
     const movieTitle = document.querySelector('#movie-title-input').value;
     new Connection().getMovies(movieTitle).then((movies) => {
         addMoviesToCarousel(movies);
+        showCarousel();
     });
 };
 
