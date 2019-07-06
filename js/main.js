@@ -32,11 +32,11 @@ class Connection {
 }
 
 const addCarouselItem = async (movie, index) => {
-    // Gets templates
+    // GET templates
     const itemTemplate = await new Connection().getHTMLTemplate('carousel-item-template');
     const indicatorTemplate = await new Connection().getHTMLTemplate('carousel-indicator-template');
 
-    // Gets carousel element + creates tempalate initializer
+    // GET carousel element + creates tempalate initializer
     const carousel = document.querySelector('#moviesCarousel');
     const templateInitializer = document.createElement('html');
 

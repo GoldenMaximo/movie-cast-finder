@@ -24,20 +24,16 @@
           transform: scaleY(0);
   -webkit-transform-origin: top;
           transform-origin: top;
-  -webkit-transition: -webkit-transform 0.7s ease-in;
-  transition: -webkit-transform 0.7s ease-in;
-  transition: transform 0.7s ease-in;
-  transition: transform 0.7s ease-in, -webkit-transform 0.7s ease-in;
-  -webkit-transition: opacity 0.7s ease-in;
-  transition: opacity 0.7s ease-in;
+  -webkit-transition: -webkit-transform 0.8s ease-in;
+  transition: -webkit-transform 0.8s ease-in;
+  transition: transform 0.8s ease-in;
+  transition: transform 0.8s ease-in, -webkit-transform 0.8s ease-in;
+  -webkit-transition: opacity 0.8s ease-in;
+  transition: opacity 0.8s ease-in;
 }
 
 .content .movies-carousel hr {
-  background-image: -webkit-linear-gradient(left, rgba(66, 133, 244, 0.8), rgba(66, 133, 244, 0.6), rgba(0, 0, 0, 0));
-  height: 2px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 100%;
+  margin: 0px;
 }
 
 .content .movies-carousel svg {
@@ -50,12 +46,14 @@
   bottom: 65vh;
   left: 15%;
   z-index: 10;
-  color: #fff;
+  color: #f8f9faf7;
   text-align: center;
+  text-shadow: 2px 2px #00000099;
 }
 
 .content .movies-carousel .carousel-header h3 {
   font-style: italic;
+  margin-bottom: 0px;
 }
 
 .content .movies-carousel .carousel-item {
@@ -68,26 +66,47 @@
 .content .movies-carousel .carousel-item .movie-poster {
   max-height: 50vh;
   margin: 0 auto;
+  margin-top: 1%;
   margin-bottom: 1%;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.content .movies-carousel .carousel-item .movie-poster:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .content .movies-carousel .carousel-item .carousel-caption {
+  margin: 0 auto;
   position: unset;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 auto;
-  border-radius: 500px;
-  background-color: #343a4029;
   padding-top: 5px;
-  width: 60%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 5px;
   margin-bottom: 50px !important;
+  background-color: #343a4029;
 }
 
 .content .movies-carousel .carousel-item .carousel-caption .movie-title {
   color: yellow;
   text-shadow: 1px 1px black !important;
+}
+
+.content .movies-carousel .carousel-item .carousel-caption .movie-description {
+  padding: 0;
+  width: 45%;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .content .header {

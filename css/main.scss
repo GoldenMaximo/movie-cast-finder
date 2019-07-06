@@ -22,15 +22,11 @@
         opacity: 0;
         transform: scaleY(0);
         transform-origin: top;
-        transition: transform 0.7s ease-in;
-        transition: opacity 0.7s ease-in;
+        transition: transform 0.8s ease-in;
+        transition: opacity 0.8s ease-in;
 
         hr {
-            background-image: -webkit-linear-gradient(left, rgba(66, 133, 244, 0.8), rgba(66, 133, 244, 0.6), rgba(0, 0, 0, 0));
-            height: 2px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            width: 100%;
+            margin: 0px;
         }
 
         svg {
@@ -43,11 +39,13 @@
             bottom: 65vh;
             left: 15%;
             z-index: 10;
-            color: #fff;
+            color: #f8f9faf7;
             text-align: center;
+            text-shadow: 2px 2px #00000099;
 
             h3 {
                 font-style: italic;
+                margin-bottom: 0px;
             }
         }
 
@@ -59,21 +57,40 @@
                 // display: flex;
                 max-height: 50vh;
                 margin: 0 auto;
+                margin-top: 1%;
                 margin-bottom: 1%;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+                transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+            }
+
+            .movie-poster:hover {
+                cursor: pointer;
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
             }
 
             .carousel-caption {
+                margin: 0 auto;
                 position: unset;
                 flex-direction: column;
-                margin: 0 auto;
-                border-radius: 500px;
-                background-color: #343a4029;
                 padding-top: 5px;
-                width: 60%;
+                padding-left: 2%;
+                padding-right: 2%;
+                padding-bottom: 5px;
                 margin-bottom: 50px !important;
+                background-color: #343a4029;
+
                 .movie-title {
                     color: yellow;
                     text-shadow: 1px 1px black !important;
+                }
+
+                .movie-description {
+                    padding: 0;
+                    width: 45%;
+                    margin: 0 auto;                
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
         }
