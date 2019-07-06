@@ -3,16 +3,15 @@
 
 This is a personal application intended mainly as a modern JS workout. No tutorials were used. Made with ECMA8+ using tools such as promises, async await, classes etc.
 
-<!-- ![](images/readme_header2.png) -->
-
 ## Usage example
 
-The idea behind this app is basically to be a search engine for movie casts, done by inputting the movie name on the movie name input and being returned a list of movies which match with that name, upon choosing from one of the movies (displayed in a carousel) a list of cast members will be shown inside a table alongside their pictures, you're able to find out more information about specific cast members by clicking on an actor from the list.
+This is a search engine for movie casts.
+You can search a movie by it's name and then choose from a list of movies which match with that name, after choosing one of the movies a list of cast members will be shown alongside their pictures, you're able to find out more information about specific cast members by clicking on an actor from the list.
 
 <!-- !!!! Reminder to include their social medias on their info as well !!!! -->
 <!-- !!!! Reminder on table hover to open the line up and render the actor's photo !!!!  -->
 
-<!-- _For more examples and usage, please refer to the [Wiki][wiki]._ - soon -->
+<!-- _For more examples and usage, please refer to the [Docs][docs]._ - soon -->
 
 ## Built With
 
@@ -24,18 +23,22 @@ The idea behind this app is basically to be a search engine for movie casts, don
 
 ## Release History
 
+* 0.3.0
+    * Greatly improved CSS and layout.
+    ![](images/readme_demo_3.png)
+
 * 0.2.0
     * Carousel Draft.
     * Initial carousel layout done.
-    * Migrating back from Materialize to Bootstrap v4 CSS + Bootstrap Native JS
-    ![](images/readme_header2.png)
+    * Migrated to Bootstrap v4 CSS + Bootstrap Native JS.
+    ![](images/readme_demo_2.png)
 
 * 0.1.0
     * Intial Draft.
     * Table Draft.
     * Intial layout and structure almost there.
     * Colors and theme kinda figured out already.
-    ![](images/readme_header.png)
+    ![](images/readme_demo_1.png)
 
 ## Help resources used
 
