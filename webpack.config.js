@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     optimization: {
-        // We no not want to minimize our code.
+        // For testing purposes.
         minimize: false,
     },
     entry: {
@@ -42,6 +42,9 @@ module.exports = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
+            // When I bundle the bootstrap native js together with my main.js, I get a "Carousel is not defined" error
+            // Having the file separate and instantiated alongside my main.js, the Carousel doesn't work, it is a function
+            // that is recognized in the console, however it doesn't apply any change to the DOM
             // {
             //     test: /bootstrap\.native/,
             //     use: {

@@ -7,13 +7,6 @@ export class Connection {
         this.castUrl = 'https://api.themoviedb.org/3/movie';
     }
 
-    async getHTMLTemplate(templateName) {
-        return fetch(`${this.templatePath}/${templateName}.txt`)
-            .then(response => response.text())
-            .then(template => template)
-            .catch(error => error);
-    }
-
     async getMovies(movieTitle) {
         return fetch(`${this.movieSearchUrl}?api_key=${this.apiKey}&query=${movieTitle}&sort_by=release_date.asc`)
             .then(response => response.json())

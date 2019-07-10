@@ -1,4 +1,3 @@
-// import bsn from 'framework/bootstrap-native/bootstrap-native-v4';
 import 'bootstrap-css-only';
 import './css/index.scss';
 import {
@@ -11,6 +10,8 @@ import {
         document.querySelector('#movieForm').addEventListener('submit', (event) => {
             // Prevents submit
             event.preventDefault();
+
+            // Self-explanatory I hope
             hideCarousel();
             destroyCarousel();
             loadCarousel();

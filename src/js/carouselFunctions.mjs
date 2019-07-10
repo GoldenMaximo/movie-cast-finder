@@ -29,35 +29,8 @@ export const addCarouselItem = async (movie, index) => {
     carousel.querySelector('.carousel-indicators').append(carouselIndicator);
 };
 
-// old ver
-// export const addCarouselItem = async (movie, index) => {
-//     // GET templates
-//     const itemTemplate = await new Connection().getHTMLTemplate('carousel-item-template');
-//     const indicatorTemplate = await new Connection().getHTMLTemplate('carousel-indicator-template');
-
-//     // GET carousel element + creates tempalate initializer
-//     const carousel = document.querySelector('#moviesCarousel');
-//     const templateInitializer = document.createElement('html');
-
-//     // Initilizes itemTemplate
-//     templateInitializer.innerHTML = itemTemplate;
-//     templateInitializer.querySelector('.carousel-item img').src += movie.poster_path;
-//     templateInitializer.querySelector('.carousel-item h5').innerText = movie.title;
-//     templateInitializer.querySelector('.carousel-item p').innerText = movie.overview;
-//     const carouselItem = templateInitializer.querySelector('.carousel-item');
-
-//     // Initilizes indicatorTemplate
-//     templateInitializer.innerHTML = indicatorTemplate;
-//     templateInitializer.querySelector('li').dataset.slideTo = index;
-//     const carouselIndicator = templateInitializer.querySelector('li');
-
-//     // Appends HTML
-//     carousel.querySelector('.carousel-inner').append(carouselItem);
-//     carousel.querySelector('.carousel-indicators').append(carouselIndicator);
-// };
-
 export const addMoviesToCarousel = async (movies) => {
-    // map works here but forEach doesn't because map returns an iterable of promises, while forEach returns nought
+    // Map works here but forEach doesn't because map returns an iterable, while forEach returns nought
     await Promise.all(movies.map(addCarouselItem)).then(() => {
         // eslint-disable-next-line no-new
         new Carousel(document.querySelector('#moviesCarousel'), {
@@ -66,26 +39,17 @@ export const addMoviesToCarousel = async (movies) => {
     });
 };
 
-// const getMovieCast = () => {
-//     const movieTitle = document.querySelector('#movie-title-input').value;
-//     new Connection().getMovies(movieTitle).then((movie) => {
-//         new Connection().getCast(movie.id).then(() => {
-//             // console.log(cast);
-//         });
-//     });
-// };
-
 export const loadCarousel = async () => {
     // Gets templates
     const carousel = new Template().carousel();
 
-    // Gets carousel container + creates tempalate initializer
+    // Gets carousel container
     const carouselContainer = document.querySelector('.carousel-container');
 
     // Appends HTML
     carouselContainer.append(carousel);
 
-    // Gets movie title
+    // Gets movie title to search then inserts the return into the carousel
     const movieTitle = document.querySelector('#movie-title-input').value;
     new Connection().getMovies(movieTitle).then((movies) => {
         addMoviesToCarousel(movies);
