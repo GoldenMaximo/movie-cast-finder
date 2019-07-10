@@ -1,5 +1,5 @@
 # Movie Cast Finder
-> Lightweight VanillaJS and Bootstrap movie cast search engine
+> A lightweight VanillaJS and Bootstrap movie cast search engine
 
 This is a personal application intended mainly as a modern JS workout. No tutorials were used. Made with ECMA8+ using tools such as promises, async await, classes etc.
 
@@ -46,10 +46,14 @@ You can search a movie by it's name and then choose from a list of movies which 
 
 ## Help resources used
 
-#### How to use the APIs
+#### How to use the API
 [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)
 
-#### Stack Overflow (for future reference)
+#### Webpack
+
+[How to add favicon to /dist?](https://github.com/coryhouse/react-slingshot/issues/128)
+
+#### Stack Overflow (For future references)
 [Fetch with classes](https://stackoverflow.com/a/39395072/10088643)
 
 [Is it a bad practice to have a constructor return a promise?](https://stackoverflow.com/questions/24398699/is-it-bad-practice-to-have-a-constructor-function-return-a-promise)
