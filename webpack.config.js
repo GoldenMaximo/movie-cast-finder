@@ -8,7 +8,7 @@ module.exports = {
     },
     entry: {
         main: './src/index.js',
-        'bootstrap-native.min': './src/js/bootstrap-native.min.js',
+        'bootstrap-native.min': './src/js/bootstrap-native-v4.js',
     },
     module: {
         rules: [
