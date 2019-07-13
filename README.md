@@ -27,14 +27,14 @@ You can search a movie by it's name and then choose from a list of movies which 
     * Greatly improved CSS and layout/HTML structure.
     * Added transitions.
   
-    ![](public/readme_demo_3.png | width=960))
+    ![](public/readme_demo_3.png)
 
 * 0.2.0
     * Carousel Draft.
     * Initial carousel layout done.
     * Migrated to Bootstrap v4 CSS + Bootstrap Native JS.
   
-    ![](public/readme_demo_2.png | width=960))
+    ![](public/readme_demo_2.png)
 
 * 0.1.0
     * Intial Draft.
@@ -42,7 +42,7 @@ You can search a movie by it's name and then choose from a list of movies which 
     * Intial layout and structure almost there.
     * Colors and theme kinda figured out already.
   
-    ![](public/readme_demo_1.png | width=960)
+    ![](public/readme_demo_1.png)
 
 ## Help resources used
 
