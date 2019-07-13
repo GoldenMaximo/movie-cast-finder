@@ -16,9 +16,10 @@ You can search a movie by it's name and then choose from a list of movies which 
 ## Built With
 
 * [Bootstrap](https://getbootstrap.com/) - The CSS framework used
-* [Bootstrap Native](https://github.com/thednp/bootstrap.native) - Native JS code for Bootstrap
-* [SASS](https://sass-lang.com/) - CSS supercharger
-* [Colorlib](https://colorlib.com/wp/template/responsive-table-v2/) Responsive table v2
+* [Bootstrap Native](https://github.com/thednp/bootstrap.native) - Vanilla JS code for Bootstrap
+* [SASS](https://sass-lang.com/) - CSS Supercharger
+* [Colorlib's Responsive Table v2](https://colorlib.com/wp/template/responsive-table-v2/) - Table Design
+* [Animista](http://animista.net/play/background/bg-pan/bg-pan-left) - Background Keyframes CSS
 * Vanilla JS / ES8+
 
 ## Release History
