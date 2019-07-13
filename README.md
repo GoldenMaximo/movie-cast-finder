@@ -75,11 +75,14 @@ Gustavo Máximo – gfmaximo97@gmail.com
 
 ## Contributing
 
-1. Fork it (<https://github.com/GoldenMaximo/movie-cast-finder/fork>)
+I'm not currently accepting pull requests as this is a personal project for training purposes.
+Feel free to fork it however.
+
+<!-- 1. Fork it (<https://github.com/GoldenMaximo/movie-cast-finder/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
+5. Create a new Pull Request -->
 
 <!-- Markdown link & img dfn's - soon -->
 <!-- [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
