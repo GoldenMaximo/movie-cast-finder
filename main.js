@@ -775,13 +775,6 @@ class Connection {
         this.castUrl = 'https://api.themoviedb.org/3/movie';
     }
 
-    async getHTMLTemplate(templateName) {
-        return fetch(`${this.templatePath}/${templateName}.txt`)
-            .then(response => response.text())
-            .then(template => template)
-            .catch(error => error);
-    }
-
     async getMovies(movieTitle) {
         return fetch(`${this.movieSearchUrl}?api_key=${this.apiKey}&query=${movieTitle}&sort_by=release_date.asc`)
             .then(response => response.json())
@@ -880,35 +873,8 @@ const addCarouselItem = async (movie, index) => {
     carousel.querySelector('.carousel-indicators').append(carouselIndicator);
 };
 
-// old ver
-// export const addCarouselItem = async (movie, index) => {
-//     // GET templates
-//     const itemTemplate = await new Connection().getHTMLTemplate('carousel-item-template');
-//     const indicatorTemplate = await new Connection().getHTMLTemplate('carousel-indicator-template');
-
-//     // GET carousel element + creates tempalate initializer
-//     const carousel = document.querySelector('#moviesCarousel');
-//     const templateInitializer = document.createElement('html');
-
-//     // Initilizes itemTemplate
-//     templateInitializer.innerHTML = itemTemplate;
-//     templateInitializer.querySelector('.carousel-item img').src += movie.poster_path;
-//     templateInitializer.querySelector('.carousel-item h5').innerText = movie.title;
-//     templateInitializer.querySelector('.carousel-item p').innerText = movie.overview;
-//     const carouselItem = templateInitializer.querySelector('.carousel-item');
-
-//     // Initilizes indicatorTemplate
-//     templateInitializer.innerHTML = indicatorTemplate;
-//     templateInitializer.querySelector('li').dataset.slideTo = index;
-//     const carouselIndicator = templateInitializer.querySelector('li');
-
-//     // Appends HTML
-//     carousel.querySelector('.carousel-inner').append(carouselItem);
-//     carousel.querySelector('.carousel-indicators').append(carouselIndicator);
-// };
-
 const addMoviesToCarousel = async (movies) => {
-    // map works here but forEach doesn't because map returns an iterable of promises, while forEach returns nought
+    // Map works here but forEach doesn't because map returns an iterable, while forEach returns nought
     await Promise.all(movies.map(addCarouselItem)).then(() => {
         // eslint-disable-next-line no-new
         new Carousel(document.querySelector('#moviesCarousel'), {
@@ -917,26 +883,17 @@ const addMoviesToCarousel = async (movies) => {
     });
 };
 
-// const getMovieCast = () => {
-//     const movieTitle = document.querySelector('#movie-title-input').value;
-//     new Connection().getMovies(movieTitle).then((movie) => {
-//         new Connection().getCast(movie.id).then(() => {
-//             // console.log(cast);
-//         });
-//     });
-// };
-
 const loadCarousel = async () => {
     // Gets templates
     const carousel = new Template().carousel();
 
-    // Gets carousel container + creates tempalate initializer
+    // Gets carousel container
     const carouselContainer = document.querySelector('.carousel-container');
 
     // Appends HTML
     carouselContainer.append(carousel);
 
-    // Gets movie title
+    // Gets movie title to search then inserts the return into the carousel
     const movieTitle = document.querySelector('#movie-title-input').value;
     new Connection().getMovies(movieTitle).then((movies) => {
         addMoviesToCarousel(movies);
@@ -944,9 +901,9 @@ const loadCarousel = async () => {
 };
 
 // CONCATENATED MODULE: ./src/index.js
-// import bsn from 'framework/bootstrap-native/bootstrap-native-v4';
 
 
+// import 'bootstrap.native';
 
 
 // DOM Listeners
@@ -955,6 +912,8 @@ const loadCarousel = async () => {
         document.querySelector('#movieForm').addEventListener('submit', (event) => {
             // Prevents submit
             event.preventDefault();
+
+            // Self-explanatory I hope
             hideCarousel();
             destroyCarousel();
             loadCarousel();
