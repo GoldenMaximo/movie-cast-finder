@@ -25,8 +25,8 @@ You can search a movie by it's name and then choose from a list of movies which 
 ## Inspirations and resources
 
 * [Colorlib's Responsive Table v2](https://colorlib.com/wp/template/responsive-table-v2/) - Table Design
-* [Animista](http://animista.net/play/background/bg-pan/bg-pan-left) - Background Keyframes CSS
-* [Wave text animation](https://codepen.io/molefrog/pen/ieJbo) - Inspiration, keyframes and CSS logic for the page title
+* [Animista](http://animista.net/play/background/bg-pan/bg-pan-left) - Background Gradient Keyframes CSS
+* [Wave text animation](https://codepen.io/molefrog/pen/ieJbo) - CSS logic and inspiration and for the page title
 
 ## Release History
 
