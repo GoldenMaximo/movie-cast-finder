@@ -1,9 +1,18 @@
 import { Connection } from './connections';
 import { Template } from './HTMLTemplates';
+import { showNotFoundMessage } from './animations';
 
-export const showCarousel = () => {
+export const showCarousel = async () => {
     document.querySelector('.movies-carousel').classList.remove('close');
-    document.querySelector('.movies-carousel').classList.add('open');
+    await new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(document.querySelector('.movies-carousel').classList.add('open'));
+        }, 100);
+    }).then(() => {
+        document.querySelector('.movies-carousel').scrollIntoView({
+            behavior: 'smooth',
+        });
+    });
 };
 
 export const hideCarousel = () => {
@@ -12,6 +21,7 @@ export const hideCarousel = () => {
 };
 
 export const destroyCarousel = () => {
+    hideCarousel();
     const carouselContainer = document.querySelector('.carousel-container');
     carouselContainer.innerHTML = '';
 };
@@ -32,7 +42,7 @@ export const addCarouselItem = async (movie, index) => {
 export const addMoviesToCarousel = async (movies) => {
     // Map works here but forEach doesn't because map returns an iterable, while forEach returns nought
     await Promise.all(movies.map(addCarouselItem)).then(() => {
-        // eslint-disable-next-line no-new
+        // eslint-disable-next-line no-new, no-undef
         new Carousel(document.querySelector('#moviesCarousel'), {
             interval: 0,
         });
@@ -52,6 +62,11 @@ export const loadCarousel = async () => {
     // Gets movie title to search then inserts the return into the carousel
     const movieTitle = document.querySelector('#movie-title-input').value;
     new Connection().getMovies(movieTitle).then((movies) => {
-        addMoviesToCarousel(movies);
+        if (movies) {
+            addMoviesToCarousel(movies);
+            showCarousel();
+        } else {
+            showNotFoundMessage();
+        }
     });
 };

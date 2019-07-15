@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Sniglet&display=swap');
 
+//============================================= Basic Start =============================================//
+
 .dark-text-shadow {
     text-shadow: 1px 1px #0000008c;
 }
@@ -8,6 +10,10 @@
     text-shadow: 1px 1px #ffffffa6;
 }
 
+//============================================== Basic End ==============================================//
+
+
+//========================================== All Content Start ==========================================//
 .content {
     overflow-y: auto;
     overflow-x: hidden;
@@ -21,6 +27,7 @@
     background-repeat: repeat;
     animation: 5s ease-out 0s infinite alternate none running bg-pan-left;
 
+    //========================================== Carousel Start ==========================================//
     .movies-carousel {
         background-color: #00000020;
         opacity: 0;
@@ -43,6 +50,7 @@
             bottom: 65vh;
             left: 15%;
             z-index: 10;
+            font-size: 40px !important;
             color: #f8f9faf7;
             text-align: center;
             text-shadow: 2px 2px #00000099;
@@ -54,11 +62,9 @@
         }
 
         .carousel-item {
-            // display: flex;
             flex-direction: column;
 
             .movie-poster {
-                // display: flex;
                 max-height: 50vh;
                 margin: 0 auto;
                 margin-top: 1%;
@@ -98,29 +104,38 @@
                 }
             }
         }
-
     }
+    //=========================================== Carousel End ===========================================//
 
+    //=========================================== Header Start ===========================================//
     .header {
         display: flex;
         padding-top: 1%;
 
         h1 {
+            font-size: 60px;
+            display: inline-block;
             margin: 0 auto;
             font-family: 'Pacifico', cursive;
         }
     }
+    //============================================ Header End ============================================//
 
+    //========================================= Search Area Start ========================================//
     .movie-search {
         padding: 2%;
 
-        #movies {
-            img {
-                height: 100%;
-            }
+        #movie-title-input:hover, #movie-title-input:focus  {
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        button:hover, button:active {
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.1) !important;
         }
     }
+    //========================================== Search Area End =========================================//
 
+    //========================================== Cast Area Start =========================================//
     .cast {
         display: none;
 
@@ -278,8 +293,32 @@
             }
         }
     }
+    //=========================================== Cast Area End ==========================================//
+
+    //========================================== No Results Start ========================================//
+    .no-hits {
+        text-align: center;
+        padding-top: 5%;
+        margin: -5vh auto;
+        max-width: 450px;
+
+        img {
+            max-width: 0%;
+        }
+
+        .show-no-hits-img {
+            animation-name: fade-in-rotation;
+            animation-timing-function: ease-out;
+            animation-direction: normal;
+            animation-duration: 0.5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+    }
+    //========================================== No Results End ==========================================//
 }
 
+//============================================ Carousel Start ============================================//
 .open {
     transform: scaleY(1) !important;
     opacity: 1 !important;
@@ -289,6 +328,7 @@
     transform: scaleY(0) !important;
     opacity: 0 !important;
 }
+//============================================= Carousel End =============================================//
 
 @keyframes bg-pan-left {
     0% {
@@ -300,12 +340,79 @@
     }
 }
 
-// @keyframes mymove {
-//     0% {
-//         max-height: 0px;
-//     }
+//============================================= Title Start =============================================//
 
-//     100% {
-//         max-height: 1000px;
-//     }
-// }
+$offset : 20px;
+$count : 40;
+$duration : 1;
+
+.wavetext {
+    text-align: center;
+}
+
+.wavetext span {
+    font-size: 60px;
+    display: inline-block;
+    animation-name: wave;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-duration: #{$duration}s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wave {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY($offset);
+    }
+}
+
+@for $i from 0 to $count {
+    .wavetext :nth-child(#{$count}n + #{$i}) {
+        animation-delay : -#{($count - $i) * 2 * $duration / $count }s;
+    }
+}
+
+//============================================== Title End ==============================================//
+
+.fade-in-circular-rotation {
+    animation-name: fade-in-rotation;
+    animation-timing-function: ease-out;
+    animation-direction: normal;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in-rotation {
+    from {
+        transform: rotateZ(0);
+        max-width: 0%;
+        opacity: 0;
+    }
+
+    to {
+        transform: rotateZ(720deg);
+        max-width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out-circle-rotation {
+    from {
+        transform: rotate(0);
+        transform: scaleY(1);
+        max-width: 100%;
+        opacity: 1;
+    }
+
+    to {
+        transform: rotate(-720deg);
+        transform: scaleY(0);
+        max-width: 0%;
+        opacity: 0;
+    }
+}

@@ -18,9 +18,13 @@ You can search a movie by it's name and then choose from a list of movies which 
 * [Bootstrap](https://getbootstrap.com/) - The CSS framework used
 * [Bootstrap Native](https://github.com/thednp/bootstrap.native) - Vanilla JS code for Bootstrap
 * [SASS](https://sass-lang.com/) - CSS Supercharger
+* Vanilla JS / ES8+
+
+## Inspirations and resources
+
 * [Colorlib's Responsive Table v2](https://colorlib.com/wp/template/responsive-table-v2/) - Table Design
 * [Animista](http://animista.net/play/background/bg-pan/bg-pan-left) - Background Keyframes CSS
-* Vanilla JS / ES8+
+* [Wave text animation](https://codepen.io/molefrog/pen/ieJbo) - Inspiration, keyframes and CSS logic for the page title
 
 ## Release History
 

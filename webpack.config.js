@@ -1,11 +1,12 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
 
 module.exports = {
-    optimization: {
-        // For testing purposes.
-        minimize: false,
-    },
+    // optimization: {
+    //     // For testing purposes.
+    //     minimize: false,
+    // },
     entry: {
         main: './src/index.js',
         'bootstrap-native.min': './src/js/bootstrap-native-v4.js',
@@ -71,4 +72,9 @@ module.exports = {
             chunkFilename: '[id].css',
         }),
     ],
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 9000,
+    },
 };
