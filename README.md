@@ -1,7 +1,7 @@
 # Movie Cast Finder
 > A lightweight VanillaJS and Bootstrap movie cast search interface
 
-This is a personal application intended mainly as a modern JS workout. No tutorials were used. 💯 Trying to up my game at promises, async await, classes etc.
+This is a personal application intended mainly as a modern JS workout. No tutorials were used. 💯 Trying to up my game at promises, async await, classes, ES6 Modules - import/export, Webpack, SASS etc.
 
 ## Usage example
 
@@ -16,9 +16,10 @@ You can search a movie by it's name and then choose from a list of movies which 
 ## Built With
 
 * [The Movie Database API](https://www.themoviedb.org/)
-* [Bootstrap](https://getbootstrap.com/) - The CSS framework used
+* [Bootstrap](https://getbootstrap.com/)
 * [Bootstrap Native](https://github.com/thednp/bootstrap.native) - Vanilla JS code for Bootstrap
-* [SASS](https://sass-lang.com/) - CSS Supercharger
+* [SASS](https://sass-lang.com/)
+* [WebPack](https://www.npmjs.com/package/webpack)
 * Vanilla JS / ES8+
 
 ## Inspirations and resources
