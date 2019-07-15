@@ -15,12 +15,12 @@ You can search a movie by it's name and then choose from a list of movies which 
 
 ## Built With
 
-* [The Movie Database API](https://www.themoviedb.org/)
+* Vanilla JS / ES8+
+* [SASS](https://sass-lang.com/)
 * [Bootstrap](https://getbootstrap.com/)
 * [Bootstrap Native](https://github.com/thednp/bootstrap.native) - Vanilla JS code for Bootstrap
-* [SASS](https://sass-lang.com/)
 * [WebPack](https://www.npmjs.com/package/webpack)
-* Vanilla JS / ES8+
+* [The Movie Database API](https://www.themoviedb.org/)
 
 ## Inspirations and resources
 
