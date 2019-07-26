@@ -12,6 +12,11 @@ export const startPageTitle = () => {
 
 export const showNotFoundMessage = () => {
     document.querySelector('.no-hits img').classList.add('fade-in-circular-rotation');
+    setTimeout(() => {
+        document.querySelector('.no-hits img').scrollIntoView({
+            behavior: 'smooth',
+        });
+    }, 500);
 };
 
 export const hideNotFoundMessage = () => {
