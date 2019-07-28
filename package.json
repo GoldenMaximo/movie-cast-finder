@@ -33,6 +33,7 @@
     "webpack-cli": "^3.3.5"
   },
   "dependencies": {
+    "animate.css": "^3.7.2",
     "bootstrap-css-only": "^4.3.1",
     "bootstrap.native": "^2.0.26",
     "express": "^4.17.1",

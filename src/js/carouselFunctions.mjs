@@ -1,32 +1,72 @@
 import { Connection } from './connections';
 import { Template } from './HTMLTemplates';
-import { showNotFoundMessage } from './animations';
+import { showNotFoundMessage } from './customAnimations';
 
-export const showCarousel = async () => {
-    document.querySelector('.movies-carousel').classList.remove('close');
-    await new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(document.querySelector('.movies-carousel').classList.add('open'));
-        }, 100);
-    }).then(() => {
-        document.querySelector('.movies-carousel').scrollIntoView({
-            behavior: 'smooth',
-        });
-    });
+const showCarousel = async () => {
+    // Doesn't work:
+
+    const carousel = document.querySelector('.movies-carousel');
+    carousel.classList.add('bounceInDown');
+
+    const handleAnimationEnd = () => {
+        carousel.classList.remove('bounceInDown');
+        carousel.style.display = 'block';
+        carousel.scrollIntoView({ behavior: 'smooth' });
+        carousel.removeEventListener('animationend', handleAnimationEnd());
+    };
+
+    carousel.addEventListener('animationend', handleAnimationEnd());
+
+
+    // Works with timeouts:
+
+    // if ([...document.querySelector('.movies-carousel').classList].includes('bounceOutDown')) {
+    //     document.querySelector('.movies-carousel').classList.remove('bounceOutDown');
+    //     setTimeout(() => {
+    //         document.querySelector('.movies-carousel').classList.add('bounceInDown');
+    //         document.querySelector('.movies-carousel').style.display = 'block';
+    //     }, 500);
+    // } else {
+    //     document.querySelector('.movies-carousel').classList.add('bounceInDown');
+    //     document.querySelector('.movies-carousel').style.display = 'block';
+    //     setTimeout(() => {
+    //         document.querySelector('.movies-carousel').scrollIntoView({
+    //             behavior: 'smooth',
+    //         });
+    //     }, 500);
+    // }
+
+
+    // Previous attempt
+    // await new Promise((resolve) => {
+    //     setTimeout(() => {
+    //         resolve(document.querySelector('.movies-carousel').classList.add('fadeInDown'));
+    //     }, 100);
+    // }).then(() => {
+    // });
 };
 
-export const hideCarousel = () => {
-    document.querySelector('.movies-carousel').classList.remove('open');
-    document.querySelector('.movies-carousel').classList.add('close');
+const hideCarousel = () => {
+    const carousel = document.querySelector('.movies-carousel');
+    carousel.classList.add('bounceOutDown');
+
+    function handleAnimationEnd() {
+        carousel.classList.remove('bounceOutDown');
+        carousel.style.display = 'none';
+        carousel.removeEventListener('animationend', handleAnimationEnd);
+    }
+
+    carousel.addEventListener('animationend', handleAnimationEnd());
 };
 
-export const destroyCarousel = () => {
-    hideCarousel();
-    const carouselContainer = document.querySelector('.carousel-container');
-    carouselContainer.innerHTML = '';
+const destroyCarousel = () => {
+    if (document.querySelector('.movies-carousel').style.display === 'block') {
+        hideCarousel();
+    }
+    document.querySelector('.carousel-container').innerHTML = '';
 };
 
-export const addCarouselItem = async (movie, index) => {
+const addCarouselItem = async (movie, index) => {
     // GET templates
     const carouselItem = new Template().carouselItem(movie.poster_path, movie.title, movie.overview);
     const carouselIndicator = new Template().carouselIndicator(index);
@@ -39,7 +79,7 @@ export const addCarouselItem = async (movie, index) => {
     carousel.querySelector('.carousel-indicators').append(carouselIndicator);
 };
 
-export const addMoviesToCarousel = async (movies) => {
+const addMoviesToCarousel = async (movies) => {
     // Map works here but forEach doesn't because map returns an iterable, while forEach returns nought
     await Promise.all(movies.map(addCarouselItem)).then(() => {
         // eslint-disable-next-line no-new, no-undef
@@ -49,17 +89,20 @@ export const addMoviesToCarousel = async (movies) => {
     });
 };
 
-export const loadCarousel = async () => {
-    // Gets templates
+const loadCarousel = async () => {
+    // Destroy previous Carousel
+    destroyCarousel();
+
+    // Gets new Carousel template
     const carousel = new Template().carousel();
 
-    // Gets carousel container
+    // Gets Carousel container
     const carouselContainer = document.querySelector('.carousel-container');
 
-    // Appends HTML
+    // Appends template to the container
     carouselContainer.append(carousel);
 
-    // Gets movie title to search then inserts the return into the carousel
+    // Searches movie title then inserts the result into the Carousel template
     const movieTitle = document.querySelector('#movie-title-input').value;
     new Connection().getMovies(movieTitle).then((movies) => {
         if (movies) {
@@ -70,3 +113,5 @@ export const loadCarousel = async () => {
         }
     });
 };
+
+export default loadCarousel;

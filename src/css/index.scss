@@ -31,11 +31,13 @@
     //========================================== Carousel Start ==========================================//
     .movies-carousel {
         background-color: #00000020;
-        opacity: 0;
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: transform 0.8s ease-in;
-        transition: opacity 0.8s ease-in;
+        // opacity: 0;
+        animation-fill-mode: forwards;
+        display: none;
+        // transform: scaleY(0);
+        // transform-origin: top;
+        // transition: transform 0.8s ease-in;
+        // transition: opacity 0.8s ease-in;
 
         hr {
             margin: 0px;
@@ -335,15 +337,15 @@
 //=========================================== All Content End ============================================//
 
 //======================================== Specific Classes Start ========================================//
-.open {
-    transform: scaleY(1) !important;
-    opacity: 1 !important;
-}
+// .open {
+//     transform: scaleY(1) !important;
+//     opacity: 1 !important;
+// }
 
-.close {
-    transform: scaleY(0) !important;
-    opacity: 0 !important;
-}
+// .close {
+//     transform: scaleY(0) !important;
+//     opacity: 0 !important;
+// }
 //========================================= Specific Classes end =========================================//
 @keyframes bg-pan-left {
     0% {

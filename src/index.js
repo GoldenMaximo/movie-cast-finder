@@ -1,7 +1,8 @@
 import 'bootstrap-css-only';
 import './css/index.scss';
-import { loadCarousel, destroyCarousel } from './js/carouselFunctions';
-import { startPageTitle } from './js/animations';
+import 'animate.css';
+import loadCarousel from './js/carouselFunctions';
+import { startPageTitle } from './js/customAnimations';
 
 // DOM Listeners
 (document.onreadystatechange = () => {
@@ -14,7 +15,6 @@ import { startPageTitle } from './js/animations';
             event.preventDefault();
 
             // Self-explanatory I hope
-            destroyCarousel();
             loadCarousel();
         });
     }
