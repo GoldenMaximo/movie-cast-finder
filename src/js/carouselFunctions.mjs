@@ -2,69 +2,44 @@ import { Connection } from './connections';
 import { Template } from './HTMLTemplates';
 import { showNotFoundMessage } from './customAnimations';
 
-const showCarousel = async () => {
-    // Doesn't work:
-
-    const carousel = document.querySelector('.movies-carousel');
-    carousel.classList.add('bounceInDown');
-
-    const handleAnimationEnd = () => {
-        carousel.classList.remove('bounceInDown');
-        carousel.style.display = 'block';
-        carousel.scrollIntoView({ behavior: 'smooth' });
-        carousel.removeEventListener('animationend', handleAnimationEnd());
+const showCarousel = async (carouselRow) => {
+    const handleShowAnimationEnd = () => {
+        carouselRow.classList.remove('bounceInUp');
+        carouselRow.scrollIntoView({ behavior: 'smooth' });
+        carouselRow.removeEventListener('animationend', handleShowAnimationEnd);
     };
 
-    carousel.addEventListener('animationend', handleAnimationEnd());
-
-
-    // Works with timeouts:
-
-    // if ([...document.querySelector('.movies-carousel').classList].includes('bounceOutDown')) {
-    //     document.querySelector('.movies-carousel').classList.remove('bounceOutDown');
-    //     setTimeout(() => {
-    //         document.querySelector('.movies-carousel').classList.add('bounceInDown');
-    //         document.querySelector('.movies-carousel').style.display = 'block';
-    //     }, 500);
-    // } else {
-    //     document.querySelector('.movies-carousel').classList.add('bounceInDown');
-    //     document.querySelector('.movies-carousel').style.display = 'block';
-    //     setTimeout(() => {
-    //         document.querySelector('.movies-carousel').scrollIntoView({
-    //             behavior: 'smooth',
-    //         });
-    //     }, 500);
-    // }
-
-
-    // Previous attempt
-    // await new Promise((resolve) => {
-    //     setTimeout(() => {
-    //         resolve(document.querySelector('.movies-carousel').classList.add('fadeInDown'));
-    //     }, 100);
-    // }).then(() => {
-    // });
+    carouselRow.style.display = 'block';
+    carouselRow.addEventListener('animationend', () => {
+        handleShowAnimationEnd();
+    });
+    carouselRow.classList.add('bounceInUp');
 };
 
-const hideCarousel = () => {
-    const carousel = document.querySelector('.movies-carousel');
-    carousel.classList.add('bounceOutDown');
+const destroyCarousel = (carouselRow => new Promise((resolve) => {
+    // Destroys Carousel
+    const emptyCarouselContainer = () => {
+        carouselRow.querySelector('.carousel-container').innerHTML = '';
+    };
 
-    function handleAnimationEnd() {
-        carousel.classList.remove('bounceOutDown');
-        carousel.style.display = 'none';
-        carousel.removeEventListener('animationend', handleAnimationEnd);
+    // Hides the Carousel if it's visible
+    if (carouselRow.style.display === 'block') {
+        const handleHideAnimationEnd = () => {
+            carouselRow.classList.remove('bounceOutDown');
+            carouselRow.removeEventListener('animationend', handleHideAnimationEnd);
+            emptyCarouselContainer();
+            resolve();
+        };
+
+        carouselRow.classList.add('bounceOutDown');
+        carouselRow.addEventListener('animationend', () => {
+            handleHideAnimationEnd();
+        });
+    } else {
+        emptyCarouselContainer();
+        resolve();
     }
-
-    carousel.addEventListener('animationend', handleAnimationEnd());
-};
-
-const destroyCarousel = () => {
-    if (document.querySelector('.movies-carousel').style.display === 'block') {
-        hideCarousel();
-    }
-    document.querySelector('.carousel-container').innerHTML = '';
-};
+}));
 
 const addCarouselItem = async (movie, index) => {
     // GET templates
@@ -89,28 +64,30 @@ const addMoviesToCarousel = async (movies) => {
     });
 };
 
-const loadCarousel = async () => {
-    // Destroy previous Carousel
-    destroyCarousel();
-
-    // Gets new Carousel template
-    const carousel = new Template().carousel();
-
-    // Gets Carousel container
+const loadCarousel = () => {
+    // Declares Carousel node elements
     const carouselContainer = document.querySelector('.carousel-container');
+    const carouselRow = document.querySelector('.movies-carousel-row');
+    const carousel = document.querySelector('#moviesCarousel');
 
-    // Appends template to the container
-    carouselContainer.append(carousel);
+    // Destroys the Carousel
+    destroyCarousel(carouselRow, carousel).then(() => {
+        // Gets new Carousel template
+        const carouselTemplate = new Template().carousel();
 
-    // Searches movie title then inserts the result into the Carousel template
-    const movieTitle = document.querySelector('#movie-title-input').value;
-    new Connection().getMovies(movieTitle).then((movies) => {
-        if (movies) {
-            addMoviesToCarousel(movies);
-            showCarousel();
-        } else {
-            showNotFoundMessage();
-        }
+        // Appends template to the container
+        carouselContainer.append(carouselTemplate);
+
+        // Searches movie title then inserts the result into the Carousel template
+        const movieTitle = document.querySelector('#movie-title-input').value;
+        new Connection().getMovies(movieTitle).then((movies) => {
+            if (movies) {
+                addMoviesToCarousel(movies);
+                showCarousel(carouselRow);
+            } else {
+                showNotFoundMessage();
+            }
+        });
     });
 };
 
