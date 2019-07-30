@@ -1,4 +1,4 @@
-# Movie Cast Finder
+# Movie Cast Finder - *Not yet functional*
 > A lightweight VanillaJS and Bootstrap movie cast search interface
 
 This is a personal application intended mainly as a modern JS workout. No tutorials were used. 💯 Trying to up my game at promises, async await, classes, ES6 Modules - import/export, Webpack, SASS etc.
