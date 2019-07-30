@@ -2,7 +2,7 @@ import { Connection } from './connections';
 import { Template } from './HTMLTemplates';
 import { showNotFoundMessage } from './customAnimations';
 
-const showCarousel = async (carouselRow) => {
+const showCarousel = (carouselRow) => {
     const handleShowAnimationEnd = () => {
         carouselRow.classList.remove('bounceInUp');
         carouselRow.scrollIntoView({ behavior: 'smooth' });
@@ -10,8 +10,8 @@ const showCarousel = async (carouselRow) => {
     };
 
     carouselRow.style.display = 'block';
-    carouselRow.addEventListener('animationend', () => {
-        handleShowAnimationEnd();
+    carouselRow.addEventListener('animationend', (event) => {
+        if (event.animationName === 'bounceInUp') handleShowAnimationEnd();
     });
     carouselRow.classList.add('bounceInUp');
 };
@@ -25,16 +25,17 @@ const destroyCarousel = (carouselRow => new Promise((resolve) => {
     // Hides the Carousel if it's visible
     if (carouselRow.style.display === 'block') {
         const handleHideAnimationEnd = () => {
+            carouselRow.style.display = 'none';
             carouselRow.classList.remove('bounceOutDown');
             carouselRow.removeEventListener('animationend', handleHideAnimationEnd);
             emptyCarouselContainer();
             resolve();
         };
 
-        carouselRow.classList.add('bounceOutDown');
-        carouselRow.addEventListener('animationend', () => {
-            handleHideAnimationEnd();
+        carouselRow.addEventListener('animationend', (event) => {
+            if (event.animationName === 'bounceOutDown') handleHideAnimationEnd();
         });
+        carouselRow.classList.add('bounceOutDown');
     } else {
         emptyCarouselContainer();
         resolve();
