@@ -22,6 +22,14 @@ You can search a movie by it's name and then choose from a list of movies which 
 * [WebPack](https://www.npmjs.com/package/webpack) - Module Bundler used
 * [The Movie Database API](https://www.themoviedb.org/) - Database used for queries
 
+## Demo
+
+![](public/demo.png)
+
+![](public/demo2.png)
+
+![](public/demo3.png)
+
 ## Inspirations and resources
 
 * [Colorlib's Responsive Table v2](https://colorlib.com/wp/template/responsive-table-v2/) - Table Design
@@ -33,23 +41,17 @@ You can search a movie by it's name and then choose from a list of movies which 
 * 0.3.0
     * Greatly improved CSS and layout/HTML structure.
     * Added transitions.
-  
-    ![](public/readme_demo_3.png)
 
 * 0.2.0
     * Carousel Draft.
     * Initial carousel layout done.
     * Migrated to Bootstrap v4 CSS + Bootstrap Native JS.
-  
-    ![](public/readme_demo_2.png)
 
 * 0.1.0
     * Intial Draft.
     * Table Draft.
     * Intial layout and structure almost there.
     * Colors and theme kinda figured out already.
-  
-    ![](public/readme_demo_1.png)
 
 ## Help resources used
 
