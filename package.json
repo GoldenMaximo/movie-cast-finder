@@ -37,7 +37,7 @@
     "bootstrap-css-only": "^4.3.1",
     "bootstrap.native": "^2.0.26",
     "eslint-utils": "^1.4.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-favicon": "^2.0.1",
     "webpack-dev-server": "^3.7.2"
   }
